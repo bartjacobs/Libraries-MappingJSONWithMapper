@@ -51,6 +51,12 @@ class ViewController: UIViewController {
 
             print(weatherData.lat)
             print(weatherData.long)
+            print(weatherData.windSpeed)
+            print(weatherData.fahrenheit)
+
+            for dataPoint in weatherData.hourlyDataPoints {
+                print(dataPoint.fahrenheit)
+            }
 
         } catch {
             print("Unable to Initialize Weather Data Due to Error (\(error))")
