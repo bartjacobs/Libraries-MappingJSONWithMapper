@@ -10,16 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        fetchWeatherData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Helper Methods
+
+    private func fetchWeatherData() {
+        // Helpers
+        let sharedSession = NSURLSession.sharedSession()
+
+        let latitude = 51.525598
+        let longitude = -0.118750
+        let apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+        if let url = NSURL(string: "https://api.forecast.io/forecast/\(apiKey)/\(latitude),\(longitude)") {
+            // Create Data Task
+            let dataTask = sharedSession.dataTaskWithURL(url) { (data, response, error) -> Void in
+                if let requestError = error {
+                    print("Unable to Fetch Weather Data")
+                    print("\(requestError), \(requestError.localizedDescription)")
+
+                } else if let weatherData = data {
+                    self.processWeatherData(weatherData)
+                }
+            }
+            
+            dataTask.resume()
+        }
     }
 
+    private func processWeatherData(data: NSData) {
+        if let dataAsString = NSString(data: data, encoding: NSUTF8StringEncoding) {
+            print(dataAsString)
+        }
+    }
 
 }
 
