@@ -14,6 +14,7 @@
 		CC26674C1D4B1332006C81B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC26674B1D4B1332006C81B6 /* Assets.xcassets */; };
 		CC26674F1D4B1332006C81B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC26674D1D4B1332006C81B6 /* LaunchScreen.storyboard */; };
 		CC2667571D4B1698006C81B6 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2667561D4B1698006C81B6 /* WeatherData.swift */; };
+		CC2667591D4B1A13006C81B6 /* WeatherDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2667581D4B1A13006C81B6 /* WeatherDataPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CC26674E1D4B1332006C81B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC2667501D4B1332006C81B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC2667561D4B1698006C81B6 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		CC2667581D4B1A13006C81B6 /* WeatherDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataPoint.swift; sourceTree = "<group>"; };
 		E01FB18EB1DDA7D85099138A /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				CC2667441D4B1332006C81B6 /* AppDelegate.swift */,
 				CC2667461D4B1332006C81B6 /* ViewController.swift */,
 				CC2667561D4B1698006C81B6 /* WeatherData.swift */,
+				CC2667581D4B1A13006C81B6 /* WeatherDataPoint.swift */,
 				CC2667481D4B1332006C81B6 /* Main.storyboard */,
 				CC26674B1D4B1332006C81B6 /* Assets.xcassets */,
 				CC26674D1D4B1332006C81B6 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2667471D4B1332006C81B6 /* ViewController.swift in Sources */,
+				CC2667591D4B1A13006C81B6 /* WeatherDataPoint.swift in Sources */,
 				CC2667571D4B1698006C81B6 /* WeatherData.swift in Sources */,
 				CC2667451D4B1332006C81B6 /* AppDelegate.swift in Sources */,
 			);
