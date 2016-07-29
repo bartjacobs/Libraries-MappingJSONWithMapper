@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Unbox
 
 class ViewController: UIViewController {
 
@@ -45,10 +46,15 @@ class ViewController: UIViewController {
     }
 
     private func processWeatherData(data: NSData) {
-        if let dataAsString = NSString(data: data, encoding: NSUTF8StringEncoding) {
-            print(dataAsString)
+        do {
+            let weatherData: WeatherData = try Unbox(data)
+
+            print(weatherData.lat)
+            print(weatherData.long)
+
+        } catch {
+            print("Unable to Initialize Weather Data Due to Error (\(error))")
         }
     }
 
 }
-
