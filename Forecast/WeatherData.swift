@@ -6,9 +6,9 @@
 //  Copyright © 2016 Cocoacasts. All rights reserved.
 //
 
-import Unbox
+import Mapper
 
-struct WeatherData: Unboxable {
+struct WeatherData: Mappable {
 
     let lat: Double
     let long: Double
@@ -16,14 +16,14 @@ struct WeatherData: Unboxable {
     let fahrenheit: Double
     let hourlyDataPoints: [WeatherDataPoint]
 
-    init(unboxer: Unboxer) {
-        self.lat = unboxer.unbox("latitude")
-        self.long = unboxer.unbox("longitude")
+    init(map: Mapper) throws {
+        lat = try map.from("latitude")
+        long = try map.from("longitude")
 
-        self.windSpeed = unboxer.unbox("currently.windSpeed", isKeyPath: true)
-        self.fahrenheit = unboxer.unbox("currently.temperature", isKeyPath: true)
+        windSpeed = try map.from("currently.windSpeed")
+        fahrenheit = try map.from("currently.temperature")
 
-        self.hourlyDataPoints = unboxer.unbox("hourly.data", isKeyPath: true)
+        hourlyDataPoints = try map.from("hourly.data")
     }
     
 }

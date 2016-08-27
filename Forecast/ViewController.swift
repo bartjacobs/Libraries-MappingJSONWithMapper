@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Unbox
 
 class ViewController: UIViewController {
 
@@ -47,19 +46,20 @@ class ViewController: UIViewController {
 
     private func processWeatherData(data: NSData) {
         do {
-            let weatherData: WeatherData = try Unbox(data)
+            if let JSON = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary,
+                let weatherData = WeatherData.from(JSON) {
+                print(weatherData.lat)
+                print(weatherData.long)
+                print(weatherData.windSpeed)
+                print(weatherData.fahrenheit)
 
-            print(weatherData.lat)
-            print(weatherData.long)
-            print(weatherData.windSpeed)
-            print(weatherData.fahrenheit)
-
-            for dataPoint in weatherData.hourlyDataPoints {
-                print(dataPoint.fahrenheit)
+                for dataPoint in weatherData.hourlyDataPoints {
+                    print(dataPoint.fahrenheit)
+                }
             }
 
         } catch {
-            print("Unable to Initialize Weather Data Due to Error (\(error))")
+            print("Unable to Initialize Weather Data")
         }
     }
 

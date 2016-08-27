@@ -6,18 +6,18 @@
 //  Copyright © 2016 Cocoacasts. All rights reserved.
 //
 
-import Unbox
+import Mapper
 
-struct WeatherDataPoint: Unboxable {
+struct WeatherDataPoint: Mappable {
 
     let time: Int
     let windSpeed: Double
     let fahrenheit: Double
 
-    init(unboxer: Unboxer) {
-        self.time = unboxer.unbox("time")
-        self.windSpeed = unboxer.unbox("windSpeed")
-        self.fahrenheit = unboxer.unbox("temperature")
+    init(map: Mapper) throws {
+        time = try map.from("time")
+        windSpeed = try map.from("windSpeed")
+        fahrenheit = try map.from("temperature")
     }
     
 }
