@@ -101,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC2667531D4B1332006C81B6 /* Build configuration list for PBXNativeTarget "Forecast" */;
 			buildPhases = (
-				085D4C2D40EBCC81FC4A4123 /* Check Pods Manifest.lock */,
+				085D4C2D40EBCC81FC4A4123 /* [CP] Check Pods Manifest.lock */,
 				CC26673D1D4B1332006C81B6 /* Sources */,
 				CC26673E1D4B1332006C81B6 /* Frameworks */,
 				CC26673F1D4B1332006C81B6 /* Resources */,
-				8B5821635B01A35FCE093545 /* Embed Pods Frameworks */,
-				D8A8388977F1CE1E9916AE29 /* Copy Pods Resources */,
+				8B5821635B01A35FCE093545 /* [CP] Embed Pods Frameworks */,
+				D8A8388977F1CE1E9916AE29 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,14 +164,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		085D4C2D40EBCC81FC4A4123 /* Check Pods Manifest.lock */ = {
+		085D4C2D40EBCC81FC4A4123 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,14 +179,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8B5821635B01A35FCE093545 /* Embed Pods Frameworks */ = {
+		8B5821635B01A35FCE093545 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,14 +194,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forecast/Pods-Forecast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8A8388977F1CE1E9916AE29 /* Copy Pods Resources */ = {
+		D8A8388977F1CE1E9916AE29 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
